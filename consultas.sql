@@ -65,3 +65,18 @@ ORDER BY ROUND(AVG(Rating), 1) DESC;
 SELECT 
     SEC_TO_TIME(SUM(Duration*60)) `Duração total da série`
 FROM got_episodes_v4;
+
+-- Quantos episódios cada diretor dirigiu?
+
+SELECT Director `Diretor`, 
+COUNT(director) AS `Quantidade de episódios`
+FROM got_episodes_v4 GROUP BY director;
+
+-- Quais foram os episódios mais bem votados na serie?
+
+SELECT  Season `Temporada`, Episode `Episódio`,
+(
+SELECT MAX (got_episodes_v4.Rating) 
+AS Votos FROM got_episodes_v4
+)
+FROM got_episodes_v4;
