@@ -80,3 +80,11 @@ SELECT MAX (got_episodes_v4.Rating)
 AS Votos FROM got_episodes_v4
 )
 FROM got_episodes_v4;
+
+SELECT * FROM characters_v4 ORDER BY episodes_appeared DESC; # Atores/Personagens que mais apareceram por episódio
+
+SELECT count(Episode) FROM got.got_episodes_v4; #Total de episódios
+
+select season,episode,max(duration) from got_episodes_v4; # Episódio mais longo 
+
+SELECT * FROM characters_v4 ORDER BY episodes_appeared asc; # Atores/Personagens que menos apareceram por episódio
