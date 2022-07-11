@@ -20,7 +20,7 @@ O projeto de análise de dados da série Game Of Thrones foi desenvolvido para o
 </ul>
 
 # Gráficos
-Confira os gráficos que fizemos para a nossa apresentação:
+Confira os [gráficos](https://www.canva.com/design/DAFFfcdltNM/3hbueaswuLx7PdHaOgvMng/watch?utm_content=DAFFfcdltNM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink) que fizemos para a nossa apresentação.
 
 # Squad
 [Isabella Oliveira](https://github.com/isabellaoliv)
