@@ -1,13 +1,14 @@
 -- Quantidade de casas por região 
 
-SELECT houses_v1.region, 
-COUNT(region) AS `Quantidade de casas por regiao`
+SELECT 
+    houses_v1.region, 
+    COUNT(region) AS `Quantidade de casas por regiao`
 FROM houses_v1 GROUP BY region;
 
 -- Quais são os nomes dos episódios dirigidos por Michael Slovis?
 SELECT 
-got_episodes_v4.Title,
-got_episodes_v4.Director
+    got_episodes_v4.Title,
+    got_episodes_v4.Director
 FROM got_episodes_v4
 WHERE Director IN ('Michael Slovis');
 
@@ -69,22 +70,41 @@ FROM got_episodes_v4;
 -- Quantos episódios cada diretor dirigiu?
 
 SELECT Director `Diretor`, 
-COUNT(director) AS `Quantidade de episódios`
+    COUNT(director) AS `Quantidade de episódios`
 FROM got_episodes_v4 GROUP BY director;
 
 -- Quais foram os episódios mais bem votados na serie?
 
-SELECT  Season `Temporada`, Episode `Episódio`,
-(
-SELECT MAX (got_episodes_v4.Rating) 
-AS Votos FROM got_episodes_v4
-)
+SELECT  
+    Season `Temporada`, 
+    Episode `Episódio`,
+    (
+    SELECT MAX (got_episodes_v4.Rating) 
+        AS Votos 
+        FROM got_episodes_v4
+    )
 FROM got_episodes_v4;
 
-SELECT * FROM characters_v4 ORDER BY episodes_appeared DESC; # Atores/Personagens que mais apareceram por episódio
+-- Atores/Personagens que mais apareceram por episódio
 
-SELECT count(Episode) FROM got.got_episodes_v4; #Total de episódios
+SELECT * FROM characters_v4 
+ORDER BY episodes_appeared DESC; 
 
-select season,episode,max(duration) from got_episodes_v4; # Episódio mais longo 
+--Total de episódios
 
-SELECT * FROM characters_v4 ORDER BY episodes_appeared asc; # Atores/Personagens que menos apareceram por episódio
+SELECT 
+    count(Episode) 
+FROM got.got_episodes_v4; 
+
+-- Episódio mais longo 
+
+SELECT
+    season,
+    episode,
+    max(duration) 
+FROM got_episodes_v4;
+
+-- Atores/Personagens que menos apareceram por episódio
+
+SELECT * FROM characters_v4 
+ORDER BY episodes_appeared ASC; 
